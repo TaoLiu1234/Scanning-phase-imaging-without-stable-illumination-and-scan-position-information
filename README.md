@@ -1,4 +1,4 @@
-====================================================================================
+
 Scanning Diffraction Imaging without Stable Illumination and Scan Position Information  
 ====================================================================================
 This repository contains the MATLAB code and experimental dataset for the research article:  
@@ -27,15 +27,22 @@ Figure6 2024.5.20- the code and dataset file
 
 Development logs
 ---------------------------  
-%09/2022 improve image quality
-%11/2022 try different experimental parameters
-%02/2023 get stable high quality image and rewrite the whole algorithm
-%04/2023 biological sample
-%09/2023 try structural beam
-%02/2024 add scaling gradient algorithm to enhance the positioning accuracy
-%in low overlapped data
-%04/2024 data analysis for modulator calibration with only probe known
-%05/2024 finish analysis for whole dataset
+09/2022 improve image quality
+
+11/2022 try different experimental parameters
+
+02/2023 get stable high quality image and rewrite the whole algorithm
+
+04/2023 biological sample
+
+09/2023 try structural beam
+
+02/2024 add scaling gradient algorithm to enhance the positioning accuracy in low overlapped data
+
+04/2024 data analysis for modulator calibration with only probe known
+
+05/2024 finish analysis for whole dataset
+
 
 Contact
 ---------------------------  
