@@ -25,14 +25,6 @@ Figure6 2024.5.20- the code and dataset file
 |-> probe_guess - Probe function which is the input of  the algorithm
 |->Reconstruction_Main - The main reconstruction function
 
-Fig2_object_after_assemble - The object function by parallel reconstruction before assembling
-Fig2_object_before_assemble - The object function after assemble (assembling engine is ptychography)
-
-Fig4_ESW_before_alignment - The parallel reconstructed exit waves before alignment of spatial probe variation
-Fig4_ESW_after_alignment - The aligned exit waves by image registration
-Fig4_object_after_assemble - The assembled object function after ptychographic engine
-Fig4_ptycho_probe_after_assemble - The probe function yield by ptychographic engine
-
 Development logs
 ---------------------------  
 %09/2022 improve image quality
