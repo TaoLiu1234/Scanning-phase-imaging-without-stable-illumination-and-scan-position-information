@@ -1,0 +1,43 @@
+%--------------------------------------------------------------------------
+%Author: Taoliu
+%Date: 24/2/2023
+%--------------------------------------------------------------------------
+
+function [cache_cpu]                                       = PrepareDP(p)
+%%
+%-------------------------------------
+%Precondition for diffraction pattern
+switch p. data_source
+    case 'SUSTech420'
+        load([p. data_location '\raw_dps_proj1.mat']);
+        dps                                                = Cell2Mat_fc(raw_dps);
+    case 'nanoMAX'
+        load([p. data_location '/raw_dps_s' num2str(p. data_num,'%06d')]);
+end
+
+if num2str(p. num_dp_used)                                 ~= "all"
+    dps                                                    = dps(:,:,(1:p.num_dp_used));
+end
+cache_cpu. sz_dps                                          = size(dps);
+cache_cpu. dps_amp                                         = ones(p.sz_fft,p.sz_fft,cache_cpu.sz_dps(3));
+cache_cpu. update_region                                   = ones(p.sz_fft./p.binning,p.sz_fft./p.binning,cache_cpu.sz_dps(3));
+
+for it                                                     = 1:size(dps,3)
+    temp_dp                                                = dps(:,:,it);
+    if p.binning>1
+        dp                                                 = circshift(CutoutCenter(temp_dp(floor(p.binning/2)+1:p.binning:end, floor(p.binning/2)+1:p.binning:end),p. sz_fft),[0 0]);
+    else
+        dp                                                 = circshift(CutoutCenter(temp_dp,p. sz_fft),[0 0]);
+    end
+    
+    %-----------------------------------%
+    cache_cpu. dps_amp(:,:,it)                             = (sqrt(dp))+eps;
+    %-----------------------------------%
+    temp                                                   = cache_cpu. update_region(:,:,it);
+    temp(find(log(sqrt(dp)^2+1)<p. dp_trust_region(1)))    = 0;
+    temp(find(dp>p. dp_trust_region(2)))                   = 0;
+    cache_cpu. update_region(:,:,it)                       = fftshift(temp);
+end
+cache_cpu. dp_avg                                          = mean(dps,3);
+cache_cpu. dp_avg_energy                                   = sum(sum(cache_cpu. dp_avg));
+end
