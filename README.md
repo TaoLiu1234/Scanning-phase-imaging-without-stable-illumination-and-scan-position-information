@@ -25,7 +25,7 @@ Figure6 2024.5.20- the code and dataset file
 |-> probe_guess - Probe function which is the input of  the algorithm
 |->Reconstruction_Main - The main reconstruction function
 
-Data source
+Open source dataset
 --------------------------- 
 https://figshare.com/articles/dataset/Open_source_data_for_Scanning_Diffraction_Imaging_without_Stable_Illumination_and_Scan_Position_Information/28642340
 Please download data from this website
