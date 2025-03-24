@@ -3,6 +3,7 @@ Scanning Diffraction Imaging without Stable Illumination and Scan Position Infor
 ====================================================================================
 This repository contains the MATLAB code and experimental dataset for the research article:  
 "Scanning diffraction imaging without stable illumination and scan position information"  
+arxiv: https://doi.org/10.48550/arXiv.2311.08415
 
 Environment Requirements 
 ---------------------------  
