@@ -49,6 +49,11 @@ Development logs
 
 05/2024 finish analysis for whole dataset
 
+Detail contribution of methodology
+---------------------------
+Jiangtao Zhao conceived the idea of combining Coherent Modulation Imaging (CMI) with ptychography and conducted the low-overlap-ratio experiments.
+Bingyang Wang performed the initial simulations under low-overlap conditions and, together with Fucai Zhang, developed the concept of performing imaging without prior knowledge of scan positions.
+Tao Liu implemented the complete algorithm, carried out simulations and experiments for position-free imaging, and proposed the strategy to correct spatial shifts in the illumination beam.
 
 Contact
 ---------------------------  
